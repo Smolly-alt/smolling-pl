@@ -1,0 +1,101 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background-color: white;
+  color: pink;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  overflow: hidden;
+  font-family: "Montserrat", "Arial Black", "Courier New", sans-serif;
+  position: relative;
+}
+
+/* nav::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle at 5% 10%, #ffc0cb 2%, transparent 2.5%),
+    radial-gradient(circle at 15% 25%, #ffb6c1 2%, transparent 2.5%),
+    radial-gradient(circle at 25% 40%, #ff69b4 1.5%, transparent 2%),
+    radial-gradient(circle at 35% 15%, #ffb6c1 2%, transparent 2.5%),
+    radial-gradient(circle at 45% 35%, #ffc0cb 1.5%, transparent 2%),
+    radial-gradient(circle at 55% 20%, #ff69b4 2%, transparent 2.5%),
+    radial-gradient(circle at 65% 45%, #ffc0cb 1.5%, transparent 2%),
+    radial-gradient(circle at 75% 10%, #ffb6c1 2%, transparent 2.5%),
+    radial-gradient(circle at 85% 30%, #ff69b4 1.5%, transparent 2%);
+  background-repeat: repeat;
+  opacity: 0.4;
+  z-index: -1;
+} */
+
+ul {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(40, 0, 40, 0.7), rgba(10, 0, 20, 0.7));
+  border: 1px solid rgba(255, 182, 193, 0.5);
+  box-shadow: 0 0 10px rgba(255, 182, 193, 0.2);
+}
+
+ul a {
+  color: #ffc0cb; /* rose pâle */
+  text-decoration: none;
+  font-weight: 600;
+  font-family: "Cinzel", "Montserrat", serif;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+  transition: 0.3s ease, transform 0.3s ease;
+  line-height: 1.8;
+  padding: 0.3rem 0.5rem;
+}
+
+ul a:hover {
+  color: #ff69b4;
+  transform: scale(1.15) rotate(-2deg);
+  text-shadow: 0 0 8px #ff69b4;
+}
+
+ul li + li::before {
+  content: "❖";
+  margin: 0 1rem;
+  color: #ffb6c1;
+}
+
+.petales {
+  position: absolute;
+  top: -10px;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(80px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  ul {
+    display: none;
+  }
+}

@@ -22,3 +22,5 @@
     # Backend
         "start": "node server.js",
         "dev": "nodemon server.js"
+# Sources
+ Icônes ourson, girl : https://www.flaticon.com/authors/aslaiart
